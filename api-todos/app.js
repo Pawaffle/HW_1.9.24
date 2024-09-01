@@ -7,6 +7,7 @@ const {
   createTodo,
   updateTodo,
   deleteTodo,
+  accodo
 } = require("./todoHandlers"); // 'todoHandlers.js' contains the route handlers
 
 // Middleware to parse JSON
@@ -25,6 +26,9 @@ app.get("/todos/:todoId", getTodoById);
 
 // PUT /todos/:todoId
 app.put("/todos/:todoId", updateTodo);
+
+// Update task to accomplished
+app.put("/todos/accomplished/:todoId", accodo);
 
 // DELETE /todos/:todoId
 app.delete("/todos/:todoId", deleteTodo);
